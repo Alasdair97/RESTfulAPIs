@@ -6,17 +6,14 @@ class VetAnimal(ABC):
     # Attributes
 
     IsAlive = True
-    Test = False
     diet = None
-    OwnerName = []
-    PetName = []
     id_iter = itertools.count()
-    LastVisit = []
+    WhyLastVisit = 'First check up'
+    PetName = []
 
     # Constructors
-    def __init__(self, owner_name, pet_name):
+    def __init__(self, pet_name):
         self.value = "Animal"
-
 
     # Methods
     @abstractmethod
@@ -31,8 +28,12 @@ class VetAnimal(ABC):
         self.IsAlive = False
         return
 
-    def eats(self, food):
+    def eats(self):
         pass
+
+    def vist(self, why):
+        self.WhyLastVisit = str(why)
+        return
 
 
 # Mammal #################
@@ -50,7 +51,7 @@ class Mammal(VetAnimal):
     def type(self):
         pass
 
-    def eats(self, food):
+    def eats(self):
         pass
 
 
@@ -70,7 +71,7 @@ class Bird(VetAnimal):
     def type(self):
         pass
 
-    def eats(self, Food):
+    def eats(self):
         pass
 
 
@@ -95,13 +96,8 @@ class Antelope(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-            return
+    def eats(self):
+        return self.diet
 
 
 # Fox
@@ -123,12 +119,8 @@ class Fox(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, food):
-        if food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
+    def eats(self):
+        return self.diet
 
 
 # Dog #####################################
@@ -137,11 +129,11 @@ class Dog(Mammal):
     diet = ['meat', 'dog food']
 
     # Constructors
-    def __init__(self, owner_name, pet_name):
+    def __init__(self, pet_name, age, breed):
         self.value = "dog"
-        self.OwnerName = owner_name
         self.PetName = pet_name
-        self.LastVisit = 'First Checkup'
+        self.age = age
+        self.breed = breed
         self.id = next(self.id_iter)
 
 
@@ -153,12 +145,8 @@ class Dog(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, food):
-        if food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
+    def eats(self):
+        return self.diet
 
 # giraffe
 
@@ -179,12 +167,8 @@ class Giraffe(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
+    def eats(self):
+        return self.diet
 
 
 # bear ###################################################
@@ -206,13 +190,8 @@ class Bear(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-            return
+    def eats(self):
+        return self.diet
 
 
 # Cow
@@ -234,13 +213,8 @@ class Cow(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-            return
+    def eats(self):
+        return self.diet
 
 
 # Lion
@@ -262,13 +236,8 @@ class Lion(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-
+    def eats(self):
+        return self.diet
 
 # Panda
 

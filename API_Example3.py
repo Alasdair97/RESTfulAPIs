@@ -23,6 +23,7 @@ PetOwners = [
      'last_visit_was_for': 'Dog bite'}
 ]
 
+print(PetOwners)
 
 @app.route('/', methods=['GET'])    # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
 def home():
