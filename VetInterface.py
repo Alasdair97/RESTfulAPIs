@@ -20,9 +20,14 @@ PetOwners = [
 ]
 
 CustomerData = AnimalList
+JSONData = []
 
 for Things in AnimalList:
-    JSONAnimal = Things.__dict__
+    JSONAnimal = vars(Things)
+    JSONData.append(JSONAnimal)
+
+print(JSONData)
+
 
 
 @app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
@@ -33,17 +38,17 @@ def home():
 # A route to return all of the available entries in our collection of pet owners.
 @app.route('/api/somearea/vetcustomers/all', methods=['GET'])
 def api_all():
-    return CustomerData
+    return JSONData
 
-app.route('/api/somearea/vetcustomers', methods=['GET'])
-def get_owner_by_id():
-    # Check if an ID was provided as part of the URL.
-    # If ID is provided, assign it to a variable.
-    # If no ID is provided, display an error in the browser.
-    if 'id' in request.args:
-        id = int(request.args['id'])
-    else:
-        return "Error: You are an idiot."
+# app.route('/api/somearea/vetcustomers', methods=['GET'])
+# def get_owner_by_id():
+#     # Check if an ID was provided as part of the URL.
+#     # If ID is provided, assign it to a variable.
+#     # If no ID is provided, display an error in the browser.
+#     if 'id' in request.args:
+#         id = int(request.args['id'])
+#     else:
+#         return "Error: You are an idiot."
 
 
 app.run()
