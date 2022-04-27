@@ -11,22 +11,25 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 PetOwners = [
-    {'id': 0,
-     'name': 'Alasdair'},
-    {'id': 1,
-     'name': 'Ahmed'},
-    {'id': 2,
-     'name': 'Gareth'}
+    {'Owner_id': 0,
+     'Owner_name': 'Alasdair'},
+    {'Owner_id': 1,
+     'Owner_name': 'Ahmed'},
+    {'Owner_id': 2,
+     'Owner_name': 'Gareth'}
 ]
 
 CustomerData = AnimalList
 JSONData = []
 
 for Things in AnimalList:
+    print(Things)
+    print(Things.PetName)
     JSONAnimal = vars(Things)
     JSONData.append(JSONAnimal)
 
-print(JSONData)
+JSONDataDict = str(JSONData)
+print(JSONDataDict)
 
 
 
@@ -38,7 +41,7 @@ def home():
 # A route to return all of the available entries in our collection of pet owners.
 @app.route('/api/somearea/vetcustomers/all', methods=['GET'])
 def api_all():
-    return JSONData
+    return JSONDataDict
 
 # app.route('/api/somearea/vetcustomers', methods=['GET'])
 # def get_owner_by_id():

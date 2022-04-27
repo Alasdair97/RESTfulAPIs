@@ -4,10 +4,8 @@ import itertools
 
 class VetAnimal(ABC):
     # Attributes
-
+    Class_ID_Counter = 0
     IsAlive = True
-    diet = None
-    id_iter = itertools.count()
     WhyLastVisit = 'First check up'
     PetName = []
 
@@ -126,7 +124,7 @@ class Fox(Mammal):
 # Dog #####################################
 class Dog(Mammal):
     # Attributes
-    diet = ['meat', 'dog food']
+    # diet = ['meat', 'dog food'] # Future Implementation
 
     # Constructors
     def __init__(self, pet_name, age, breed):
@@ -134,7 +132,8 @@ class Dog(Mammal):
         self.PetName = pet_name
         self.age = age
         self.breed = breed
-        self.id = next(self.id_iter)
+        self.id = VetAnimal.Class_ID_Counter
+        VetAnimal.Class_ID_Counter +=1
 
 
     def __repr__(self):
