@@ -6,8 +6,9 @@ class Animal(ABC):
     age = None
     name = None
     health = None
-    weight = None # Weight in grams
+    weight = None  # Weight in grams
     IsAlive = True
+    last_Vist = None
     
     #Constructors
     def __init__(self,Age,Name,Weight,Health):
@@ -19,27 +20,18 @@ class Animal(ABC):
 
     #Methods
     @abstractmethod
-    def reproduce(self):
-        pass
-
     def eat(self):
         pass
 
-    def sleep(self):
-        return ("I am sleeping")
-
     def type(self):
         pass
-
-    def grow(self):
-        return ("I am growing")
 
     def die(self):
         self.IsAlive = False
         self.health = 'Dead'
         return
 
-    def healthCheck(self,HealthImput):
+    def healthCheck(self, HealthImput):
         self.health = HealthImput
         return
     
@@ -50,10 +42,10 @@ class Animal(ABC):
 ##################### Mammal #################
 
 class Mammal(Animal):
-    #Attributes
+    # Attributes
 
 
-    #Constructors
+    # Constructors
     def __init__(self,Age,Name,Weight,Health):
         self.value = "Mammal"
         super().__init__(Age,Name,Weight,Health)
@@ -142,7 +134,7 @@ class Pigeon(Bird):
      #Attributes
     colour = None
 
-    #Constructors
+    # Constructors
     def __init__(self,Age,Name,Weight,Health):
         self.value = "Pigeon"
         super().__init__(Age,Name,Weight,Health)
