@@ -4,14 +4,14 @@ import json
 from flask import request, jsonify
 from VetAnimal import Dog
 
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
-
 Pet1 = Dog('Tom', 'Steve')
 
 JsonObjectString = json.dumps(Pet1.__dict__)
 
-# print(JsonObjectString) # Test for JSON
+print(JsonObjectString) # Test for JSON
+
+app = flask.Flask(__name__)
+app.config["DEBUG"] = True
 
 
 @app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
