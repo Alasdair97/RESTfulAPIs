@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import itertools
 
 
 class VetAnimal(ABC):
@@ -9,7 +10,7 @@ class VetAnimal(ABC):
     diet = None
     OwnerName = []
     PetName = []
-    id = []
+    id_iter = itertools.count()
     LastVisit = []
 
     # Constructors
@@ -141,6 +142,7 @@ class Dog(Mammal):
         self.OwnerName = owner_name
         self.PetName = pet_name
         self.LastVisit = 'First Checkup'
+        self.id = next(self.id_iter)
 
 
     def __repr__(self):
