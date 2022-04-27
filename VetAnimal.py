@@ -8,6 +8,7 @@ class VetAnimal(ABC):
     IsAlive = True
     WhyLastVisit = 'First check up'
     PetName = []
+    id = []
 
     # Constructors
     def __init__(self, pet_name):
@@ -127,13 +128,14 @@ class Dog(Mammal):
     # diet = ['meat', 'dog food'] # Future Implementation
 
     # Constructors
-    def __init__(self, pet_name, age, breed):
+    def __init__(self, pet_name, age, breed, owner_id):
         self.value = "dog"
         self.PetName = pet_name
         self.age = age
         self.breed = breed
-        self.id = VetAnimal.Class_ID_Counter
-        VetAnimal.Class_ID_Counter +=1
+        self.id = owner_id
+        self.petid = VetAnimal.Class_ID_Counter
+        VetAnimal.Class_ID_Counter += 1
 
 
     def __repr__(self):
