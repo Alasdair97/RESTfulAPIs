@@ -25,7 +25,7 @@ PetOwners = [
 ]
 
 
-@app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
+@app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on. In this case nothing and so home
 def home():
     return "<h1>Welcome to Gareth's virtual lesson</h1><p>Sorry I am still ill.</p>"  # what the api returns
 
