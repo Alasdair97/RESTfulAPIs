@@ -1,4 +1,3 @@
-[
   {
     "id": 0, 
     "LastVisit": "First Checkup", 
@@ -20,4 +19,3 @@
     "PetName": "Greg", 
     "value": "dog"
   }
-]
