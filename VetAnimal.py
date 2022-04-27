@@ -1,27 +1,30 @@
 from abc import ABC, abstractmethod
 
 
-class Animal(ABC):
+class VetAnimal(ABC):
     # Attributes
 
     IsAlive = True
     Test = False
     diet = None
+    OwnerName = []
+    PetName = []
+    id = []
+    LastVisit = []
 
     # Constructors
-    def __init__(self):
+    def __init__(self, owner_name, pet_name):
         self.value = "Animal"
+
 
     # Methods
     @abstractmethod
-    def reproduce(self):
-        pass
-
-    def sleep(self):
-        return "I am sleeping"
-
     def type(self):
         pass
+
+    def changePetName(self, petName):
+        self.PetName = petName
+        return
 
     def die(self):
         self.IsAlive = False
@@ -34,7 +37,7 @@ class Animal(ABC):
 # Mammal #################
 
 
-class Mammal(Animal):
+class Mammal(VetAnimal):
     # Attributes
 
     # Constructors
@@ -43,12 +46,6 @@ class Mammal(Animal):
 
     # Methods
     @abstractmethod
-    def diet(self):
-        pass
-
-    def reproduce(self):
-        return "Live Birth"
-
     def type(self):
         pass
 
@@ -59,7 +56,7 @@ class Mammal(Animal):
 # Bird ####################
 
 
-class Bird(Animal):
+class Bird(VetAnimal):
     # Attributes
     wingspan = None
 
@@ -69,12 +66,6 @@ class Bird(Animal):
 
     # Methods
     @abstractmethod
-    def diet(self):
-        pass
-
-    def reproduce(self):
-        return "Lay Egg"
-
     def type(self):
         pass
 
@@ -138,6 +129,34 @@ class Fox(Mammal):
         else:
             self.Test = False
 
+
+# Dog #####################################
+class Dog(Mammal):
+    # Attributes
+    diet = ['meat', 'dog food']
+
+    # Constructors
+    def __init__(self, owner_name, pet_name):
+        self.value = "dog"
+        self.OwnerName = owner_name
+        self.PetName = pet_name
+        self.LastVisit = 'First Checkup'
+
+
+    def __repr__(self):
+        rep = 'dog'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, food):
+        if food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
 
 # giraffe
 
@@ -335,7 +354,7 @@ class Chicken(Bird):
 
 # Bug
 
-class Bug(Animal):
+class Bug(VetAnimal):
     # Attributes
     diet = ['leaves']
 
@@ -363,7 +382,7 @@ class Bug(Animal):
 
 
 # big-fish
-class Big_Fish(Animal):
+class Big_Fish(VetAnimal):
     # Attributes
     diet = ['little_fish']
 
@@ -391,7 +410,7 @@ class Big_Fish(Animal):
 
 
 # Little-fish
-class Little_Fish(Animal):
+class Little_Fish(VetAnimal):
     # Attributes
     diet = ['']
 
@@ -419,7 +438,7 @@ class Little_Fish(Animal):
 
 
 # grass
-class Grass(Animal):
+class Grass(VetAnimal):
     # Attributes
     diet = []
 
@@ -447,7 +466,7 @@ class Grass(Animal):
 
 
 # leaves
-class Leaves(Animal):
+class Leaves(VetAnimal):
     # Attributes
     diet = []
 
