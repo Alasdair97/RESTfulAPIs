@@ -149,6 +149,33 @@ class Dog(Mammal):
     def eats(self):
         return self.diet
 
+class Cat(Mammal):
+    # Attributes
+    # diet = ['meat', 'dog food'] # Future Implementation
+
+    # Constructors
+    def __init__(self, pet_name, age, colour, owner_id):
+        self.value = "cat"
+        self.PetName = pet_name
+        self.age = age
+        self.colour = colour
+        self.id = owner_id
+        self.petid = VetAnimal.Class_ID_Counter
+        VetAnimal.Class_ID_Counter += 1
+
+
+    def __repr__(self):
+        rep = 'cat'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self):
+        return self.diet
+
+
 # giraffe
 
 

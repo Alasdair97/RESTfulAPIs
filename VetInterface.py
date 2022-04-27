@@ -29,7 +29,7 @@ for Things in AnimalList:
     JSONData.append(JSONAnimal)
 
 JSONDataDict = ast.literal_eval(json.dumps(JSONData))
-print(JSONDataDict)
+# print(JSONDataDict)
 
 
 @app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
@@ -42,7 +42,7 @@ def home():
 def api_all():
     return jsonify(JSONDataDict)
 
-app.route('/api/somearea/vetcustomers', methods=['GET'])
+@app.route('/api/somearea/vetcustomers', methods=['GET'])
 def get_owner_by_id():
     # Check if an ID was provided as part of the URL.
     # If ID is provided, assign it to a variable.
@@ -57,9 +57,9 @@ def get_owner_by_id():
 
     # Loop through the data and match results that fit the requested ID.
     # IDs are unique, but other fields might return many results
-    for PetOwner in JSONDataDict:
-        if PetOwner['id'] == id:
-            results.append(PetOwner)
+    for Pet in JSONDataDict:
+        if Pet['id'] == id:
+            results.append(Pet)
 
     # Use the jsonify function from Flask to convert our list of
     # Python dictionaries to the JSON format.
