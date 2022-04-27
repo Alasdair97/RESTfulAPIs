@@ -1,183 +1,474 @@
 from abc import ABC, abstractmethod
 
+
 class Animal(ABC):
+    # Attributes
 
-    #Attributes
-    age = None
-    name = None
-    health = None
-    weight = None  # Weight in grams
     IsAlive = True
-    last_Vist = None
-    
-    #Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        self.value = "Animal"
-        self.age = Age
-        self.name = Name
-        self.weight = Weight
-        self.health = Health
+    Test = False
+    diet = None
 
-    #Methods
+    # Constructors
+    def __init__(self):
+        self.value = "Animal"
+
+    # Methods
     @abstractmethod
-    def eat(self):
+    def reproduce(self):
         pass
+
+    def sleep(self):
+        return "I am sleeping"
 
     def type(self):
         pass
 
     def die(self):
         self.IsAlive = False
-        self.health = 'Dead'
         return
 
-    def healthCheck(self, HealthImput):
-        self.health = HealthImput
-        return
-    
-    def weightCheck(self):
-        self.weight = input("Please Enter Weight in g: ")
-        return
+    def eats(self, food):
+        pass
 
-##################### Mammal #################
+
+# Mammal #################
+
 
 class Mammal(Animal):
     # Attributes
 
-
     # Constructors
-    def __init__(self,Age,Name,Weight,Health):
+    def __init__(self):
         self.value = "Mammal"
-        super().__init__(Age,Name,Weight,Health)
 
-
-    #Methods
+    # Methods
     @abstractmethod
-    def eat(self):
+    def diet(self):
         pass
-    
+
     def reproduce(self):
         return "Live Birth"
 
     def type(self):
         pass
 
-################### Bird ####################
+    def eats(self, food):
+        pass
+
+
+# Bird ####################
+
 
 class Bird(Animal):
-    #Attributes
+    # Attributes
     wingspan = None
 
-    #Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        super().__init__(Age,Name,Weight,Health)
+    # Constructors
+    def __init__(self):
         self.value = "Bird"
 
-
-    #Methods
+    # Methods
     @abstractmethod
-    def eat(self):
+    def diet(self):
         pass
-    
+
     def reproduce(self):
         return "Lay Egg"
 
-
     def type(self):
         pass
 
-########################### Mammals ##########################
-    
-################## Cat
-        
-class Cat(Mammal):
-     #Attributes
-    colour = None
-
-    #Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        self.value = "Cat"
-        super().__init__(Age,Name,Weight,Health)
+    def eats(self, Food):
+        pass
 
 
-    #Methods
-    def type(self):
-        return(self.value)
+# Mammals ##########################
 
-    def eat(self):
-        return "I eat mice"
-
-################## Dog
-        
-class Dog(Mammal):
-     #Attributes
-    breed = None
-
-    #Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        self.value = "Dog"
-        super().__init__(Age,Name,Weight,Health)
+# antelope
 
 
-    #Methods
-    def type(self):
-        return(self.value)
-
-    def eat(self):
-        return "I eat meat"
-
-########################### Birds ##########################
-    
-## Pigeon
-
-class Pigeon(Bird):
-     #Attributes
-    colour = None
+class Antelope(Mammal):
+    # Attributes
+    diet = ['grass']
 
     # Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        self.value = "Pigeon"
-        super().__init__(Age,Name,Weight,Health)
+    def __init__(self):
+        self.value = "antelope"
 
-    #Methods
+    def __repr__(self):
+        rep = 'antelope'
+        return rep
+
+    # Methods
     def type(self):
-        return(self.value)
+        return self.value
 
-    def eat(self):
-        return "I eat anythng"
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+            return
 
-## Parrot
 
-class Parrot(Bird):
-     #Attributes
-    colour = None
+# Fox
 
-    #Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        self.value = "Parrot"
-        super().__init__(Age,Name,Weight,Health)
 
-    #Methods
+class Fox(Mammal):
+    # Attributes
+    diet = ['chicken', 'sheep']
+
+    # Constructors
+    def __init__(self):
+        self.value = "fox"
+
+    def __repr__(self):
+        rep = 'fox'
+        return rep
+
+    # Methods
     def type(self):
-        return(self.value)
+        return self.value
 
-    def eat(self):
-        return "I eat fruit, seeds and nuts"
+    def eats(self, food):
+        if food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
 
-## Owl
 
-class Owl(Bird):
-     #Attributes
-    colour = None
+# giraffe
 
-    #Constructors
-    def __init__(self,Age,Name,Weight,Health):
-        self.value = "Owl"
-        super().__init__(Age,Name,Weight,Health)
 
-    #Methods
+class Giraffe(Mammal):
+    # Attributes
+    diet = ['leaves']
+
+    # Constructors
+    def __init__(self):
+        self.value = "giraffe"
+
+    def __repr__(self):
+        rep = 'giraffe'
+        return rep
+
+    # Methods
     def type(self):
-        return(self.value)
+        return self.value
 
-    def eat(self):
-        return "I eat mice, small birds and frogs"
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# bear ###################################################
+
+
+class Bear(Mammal):
+    # Attributes
+    diet = ['big_fish', 'bug', 'chicken', 'cow', 'leaves', 'sheep']
+
+    # Constructors
+    def __init__(self):
+        self.value = "bear"
+
+    def __repr__(self):
+        rep = 'bear'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+            return
+
+
+# Cow
+
+
+class Cow(Mammal):
+    # Attributes
+    diet = ['grass']
+
+    # Constructors
+    def __init__(self):
+        self.value = "cow"
+
+    def __repr__(self):
+        rep = 'cow'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+            return
+
+
+# Lion
+
+
+class Lion(Mammal):
+    # Attributes
+    diet = ['antelope', 'cow']
+
+    # Constructors
+    def __init__(self):
+        self.value = "lion"
+
+    def __repr__(self):
+        rep = 'lion'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# Panda
+
+
+class Panda(Mammal):
+    # Attributes
+    diet = ['leaves']
+
+    # Constructors
+    def __init__(self):
+        self.value = "panda"
+
+    def __repr__(self):
+        rep = 'panda'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# Sheep
+
+class Sheep(Mammal):
+    # Attributes
+    diet = ['grass']
+
+    # Constructors
+    def __init__(self):
+        self.value = "sheep"
+
+    def __repr__(self):
+        rep = 'sheep'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# Birds ##########################
+
+# chicken
+
+
+class Chicken(Bird):
+    # Attributes
+    diet = ['bug']
+
+    # Constructors
+    def __init__(self):
+        self.value = "chicken"
+
+    def __repr__(self):
+        rep = 'chicken'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# Others ##########################
+
+# Bug
+
+class Bug(Animal):
+    # Attributes
+    diet = ['leaves']
+
+    # Constructors
+    def __init__(self):
+        self.value = "Bug"
+
+    def __repr__(self):
+        rep = 'bug'
+        return rep
+
+    # Methods
+    def reproduce(self):
+        return "Lay Egg"
+
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# big-fish
+class Big_Fish(Animal):
+    # Attributes
+    diet = ['little_fish']
+
+    # Constructors
+    def __init__(self):
+        self.value = "big_fish"
+
+    def __repr__(self):
+        rep = 'big_fish'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def reproduce(self):
+        return "Lay Eggs"
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# Little-fish
+class Little_Fish(Animal):
+    # Attributes
+    diet = ['']
+
+    # Constructors
+    def __init__(self):
+        self.value = "little_fish"
+
+    def __repr__(self):
+        rep = 'little_fish'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
+
+    def reproduce(self):
+        return "Lay Eggs"
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# grass
+class Grass(Animal):
+    # Attributes
+    diet = []
+
+    # Constructors
+    def __init__(self):
+        self.value = "grass"
+
+    def __repr__(self):
+        rep = 'grass'
+        return rep
+
+    # Methods
+    def reproduce(self):
+        return "pollinate"
+
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
+
+
+# leaves
+class Leaves(Animal):
+    # Attributes
+    diet = []
+
+    # Constructors
+    def __init__(self):
+        self.value = "leaves"
+
+    def __repr__(self):
+        rep = 'leaves'
+        return rep
+
+    # Methods
+    def reproduce(self):
+        return "pollinate"
+
+    def type(self):
+        return self.value
+
+    def eats(self, Food):
+        if Food in self.diet:
+            self.Test = True
+            return
+        else:
+            self.Test = False
