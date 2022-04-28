@@ -25,26 +25,29 @@ for Pets in AnimalList:
 JSONAnimals = ast.literal_eval(json.dumps(JSONAnimalData))
 JSONOwner = ast.literal_eval(json.dumps(JSONOwnerData))
 JSONAll = ast.literal_eval(json.dumps(JSONAllData))
+
+
 # print(JSONDataDict)
 
 
-@app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
+@app.route('/', methods=[
+    'GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
 def home():
     return (
-    "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
-    "<p>Look up <a href='/api/somearea/data/all')>all data.</a></p>"
-    "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
-    "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
-    "<p>Look up owener and corresponding pet(s): </p>"
-    """
+        "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
+        "<p>Look up <a href='/api/somearea/data/all')>all data.</a></p>"
+        "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
+        "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
+        "<p>Look up owener and corresponding pet(s): </p>"
+        """
     <select onChange="window.location.href=this.value">
         <option value="/">-</option>
          <option value="/api/somearea/vetcustomers?id=0">0</option>
          <option value = "/api/somearea/vetcustomers?id=1">1</option>
          <option value = "/api/somearea/vetcustomers?id=2">2</option>
     </select>"""
-    "<p>Look up PetID and corresponding owner: </p>"
-    """
+        "<p>Look up PetID and corresponding owner: </p>"
+        """
     <select onChange="window.location.href=this.value">
         <option value="/">-</option>
          <option value="/api/somearea/vetpets?petID=0">0</option>
@@ -60,14 +63,17 @@ def home():
 def api_all_data():
     return jsonify(JSONAll)
 
+
 # A route to return all of the available entries in our collection of pets.
 @app.route('/api/somearea/vetpets/all', methods=['GET'])
 def api_all_pets():
     return jsonify(JSONAnimals)
 
+
 @app.route('/api/somearea/vetcustomers/all', methods=['GET'])
 def api_all_owners():
     return jsonify(JSONOwner)
+
 
 @app.route('/api/somearea/vetpets', methods=['GET'])
 def get_owner_by_pet_id():
@@ -79,7 +85,7 @@ def get_owner_by_pet_id():
     else:
         return "Error: You are an idiot."
 
-# Create an empty list for our results
+    # Create an empty list for our results
     results2 = []
 
     # Loop through the data and match results that fit the requested ID.
@@ -105,7 +111,7 @@ def get_owner_by_id():
     else:
         return "Error: You are an idiot."
 
-# Create an empty list for our results
+    # Create an empty list for our results
     results = []
 
     # Loop through the data and match results that fit the requested ID.
@@ -121,6 +127,7 @@ def get_owner_by_id():
     # Use the jsonify function from Flask to convert our list of
     # Python dictionaries to the JSON format.
     return jsonify(results)
+
 
 if __name__ == '__main__':
     app.run()
