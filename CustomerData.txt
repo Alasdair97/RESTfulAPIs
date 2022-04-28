@@ -2,6 +2,6 @@
 {'value':'VetOwner', 'Owner_Name': 'Ahmed'}
 {'value':'VetOwner', 'Owner_Name': 'Gareth'}
 {'value':'Dog', 'PetName': 'Oscar', 'age': 7, 'owner_id': 0, 'breed': 'weimaraner'}
-{'value':'Dog', 'PetName': 'Mac', 'age': 3, 'owner_id': 1, 'breed': 'boxer'}
-{'value':'Cat', 'PetName': 'Leia', 'age': 3, 'owner_id': 0, 'colour': 'white'}
-{'value':'Cat', 'PetName': 'Captain Jazzy Pants', 'age': 1, 'owner_id': 2, 'colour': 'Ginger'}
+{'value':'Dog', 'PetName': 'Mac', 'age': 3, 'owner_id': 1, 'breed': 'boxer', 'WhyLastVisit': 'Slow even for a dog'}
+{'value':'Cat', 'PetName': 'Leia', 'age': 18, 'owner_id': 0, 'colour': 'white'}
+{'value':'Cat', 'PetName': 'Captain Jazzy Pants', 'age': 1, 'owner_id': 2, 'colour': 'Ginger', 'WhyLastVisit': 'Dog bite'}

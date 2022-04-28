@@ -5,10 +5,6 @@ from PetObjects import AnimalList, PetOwners
 import json
 import ast
 
-# DataFile = open('CustomerData.txt', 'r')
-# CustomerData = dict(DataFile.read())
-# DataFile.close()
-
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
