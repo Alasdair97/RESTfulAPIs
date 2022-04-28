@@ -43,6 +43,15 @@ def home():
          <option value = "/api/somearea/vetcustomers?id=1">1</option>
          <option value = "/api/somearea/vetcustomers?id=2">2</option>
     </select>"""
+    "<p>Look up PetID and corresponding owner: </p>"
+    """
+    <select onChange="window.location.href=this.value">
+        <option value="/">-</option>
+         <option value="/api/somearea/vetpets?petID=0">0</option>
+         <option value = "/api/somearea/vetpets?petID=1">1</option>
+         <option value = "/api/somearea/vetpets?petID=2">2</option>
+         <option value = "/api/somearea/vetpets?petID=3">3</option>
+    </select>"""
     )
 
 
@@ -84,6 +93,7 @@ def get_owner_by_pet_id():
     # Use the jsonify function from Flask to convert our list of
     # Python dictionaries to the JSON format.
     return jsonify(results2)
+
 
 @app.route('/api/somearea/vetcustomers', methods=['GET'])
 def get_owner_by_id():
