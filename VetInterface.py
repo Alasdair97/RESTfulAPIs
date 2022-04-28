@@ -1,11 +1,11 @@
 # Vet interface
 import flask
-from flask import request, jsonify
+from flask import request, jsonify, Flask
 from PetObjects import AnimalList, PetOwners
 import json
 import ast
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 app.config["DEBUG"] = True
 
 JSONAnimalData = []
@@ -122,5 +122,5 @@ def get_owner_by_id():
     # Python dictionaries to the JSON format.
     return jsonify(results)
 
-
-app.run()
+if __name__ == '__main__':
+    app.run()
