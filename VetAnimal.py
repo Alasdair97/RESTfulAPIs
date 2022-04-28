@@ -83,9 +83,15 @@ class Antelope(Mammal):
     diet = ['grass']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "antelope"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'antelope'
@@ -112,7 +118,6 @@ class Fox(Mammal):
         self.value = "fox"
         self.PetName = pet_name
         self.age = age
-        # self.breed = breed
         self.owner_id = owner_id
         self.pet_id = VetAnimal.Class_ID_Counter
         self.WhyLastVisit = 'First check up'
@@ -189,9 +194,15 @@ class Giraffe(Mammal):
     diet = ['leaves']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "giraffe"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'giraffe'
@@ -213,9 +224,15 @@ class Bear(Mammal):
     diet = ['big_fish', 'bug', 'chicken', 'cow', 'leaves', 'sheep']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "bear"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'bear'
@@ -237,9 +254,15 @@ class Cow(Mammal):
     diet = ['grass']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "cow"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'cow'
@@ -261,9 +284,15 @@ class Lion(Mammal):
     diet = ['antelope', 'cow']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "lion"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'lion'
@@ -284,9 +313,15 @@ class Panda(Mammal):
     diet = ['leaves']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "panda"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'panda'
@@ -304,9 +339,15 @@ class Sheep(Mammal):
     diet = ['grass']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "sheep"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'sheep'
@@ -327,9 +368,15 @@ class Chicken(Bird):
     diet = ['bug']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "chicken"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'chicken'
@@ -349,9 +396,15 @@ class Bug(VetAnimal):
     diet = ['leaves']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
-        self.value = "Bug"
+        self.value = "bug"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'bug'
@@ -371,9 +424,15 @@ class Big_Fish(VetAnimal):
     diet = ['little_fish']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
-        self.value = "big_fish"
+        self.value = "big-fish"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'big_fish'
@@ -393,9 +452,15 @@ class Little_Fish(VetAnimal):
     diet = ['']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
-        self.value = "little_fish"
+        self.value = "little-fish"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'little_fish'
