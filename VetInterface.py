@@ -14,17 +14,21 @@ app.config["DEBUG"] = True
 
 JSONAnimalData = []
 JSONOwnerData = []
+JSONAllData = []
 
 for Owner in PetOwners:
     JSONOwner = vars(Owner)
     JSONOwnerData.append(JSONOwner)
+    JSONAllData.append(JSONOwner)
 
 for Pets in AnimalList:
     JSONAnimal = vars(Pets)
     JSONAnimalData.append(JSONAnimal)
+    JSONAllData.append(JSONAnimal)
 
 JSONAnimals = ast.literal_eval(json.dumps(JSONAnimalData))
 JSONOwner = ast.literal_eval(json.dumps(JSONOwnerData))
+JSONAll = ast.literal_eval(json.dumps(JSONAllData))
 # print(JSONDataDict)
 
 
@@ -32,13 +36,19 @@ JSONOwner = ast.literal_eval(json.dumps(JSONOwnerData))
 def home():
     return (
     "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
+    "<p>Look up <a href='/api/somearea/data/all')>all data.</a></p>"
     "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
     "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
     "<p>Look up owener and corispoding <a href='/api/somearea/vetcustomers?id=0')>pets.</a></p>"
     )
 
 
-# A route to return all of the available entries in our collection of pet owners.
+# A route to return all data entries.
+@app.route('/api/somearea/data/all', methods=['GET'])
+def api_all_data():
+    return jsonify(JSONAll)
+
+# A route to return all of the available entries in our collection of pets.
 @app.route('/api/somearea/vetpets/all', methods=['GET'])
 def api_all_pets():
     return jsonify(JSONAnimals)
