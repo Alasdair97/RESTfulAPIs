@@ -30,14 +30,22 @@ JSONOwner = ast.literal_eval(json.dumps(JSONOwnerData))
 
 @app.route('/', methods=['GET'])  # tell which HTTP method we are using (GET) and what route (extra bit of the URL) this method will be activated on.  In this case nothing and so home
 def home():
-    return "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
+    return (
+    "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
+    "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
+    "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
+    "<p>Look up owener and corispoding <a href='/api/somearea/vetcustomers?id=0')>pets.</a></p>"
+    )
 
 
 # A route to return all of the available entries in our collection of pet owners.
-@app.route('/api/somearea/vetcustomers/all', methods=['GET'])
-def api_all():
+@app.route('/api/somearea/vetpets/all', methods=['GET'])
+def api_all_pets():
     return jsonify(JSONAnimals)
 
+@app.route('/api/somearea/vetcustomers/all', methods=['GET'])
+def api_all_owners():
+    return jsonify(JSONOwner)
 
 @app.route('/api/somearea/vetcustomers', methods=['GET'])
 def get_owner_by_id():
