@@ -107,9 +107,16 @@ class Fox(Mammal):
     diet = ['chicken', 'sheep']
 
     # Constructors
-    def __init__(self, pet_name):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "fox"
+        self.PetName = pet_name
+        self.age = age
+        # self.breed = breed
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):
         rep = 'fox'
@@ -400,47 +407,3 @@ class Little_Fish(VetAnimal):
 
     def reproduce(self):
         return "Lay Eggs"
-
-
-# grass
-class Grass(VetAnimal):
-    # Attributes
-    diet = []
-
-    # Constructors
-    def __init__(self, pet_name):
-        super().__init__(pet_name)
-        self.value = "grass"
-
-    def __repr__(self):
-        rep = 'grass'
-        return rep
-
-    # Methods
-    def reproduce(self):
-        return "pollinate"
-
-    def type(self):
-        return self.value
-
-
-# leaves
-class Leaves(VetAnimal):
-    # Attributes
-    diet = []
-
-    # Constructors
-    def __init__(self, pet_name):
-        super().__init__(pet_name)
-        self.value = "leaves"
-
-    def __repr__(self):
-        rep = 'leaves'
-        return rep
-
-    # Methods
-    def reproduce(self):
-        return "pollinate"
-
-    def type(self):
-        return self.value
