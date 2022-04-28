@@ -42,6 +42,7 @@ def home():
     "<p>Look up owener and corresponding pet(s): </p>"
     """
     <select onChange="window.location.href=this.value">
+        <option value="/">-</option>
          <option value="/api/somearea/vetcustomers?id=0">0</option>
          <option value = "/api/somearea/vetcustomers?id=1">1</option>
          <option value = "/api/somearea/vetcustomers?id=2">2</option>
