@@ -1,7 +1,7 @@
 # Vet interface
 import flask
 from flask import request, jsonify
-from PetObjects import AnimalList
+from PetObjects import AnimalList, PetOwners
 import json
 import ast
 
@@ -12,23 +12,19 @@ import ast
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
-PetOwners = [
-    {'Owner_id': 0,
-     'Owner_name': 'Alasdair'},
-    {'Owner_id': 1,
-     'Owner_name': 'Ahmed'},
-    {'Owner_id': 2,
-     'Owner_name': 'Gareth'}
-]
+JSONAnimalData = []
+JSONOwnerData = []
 
-CustomerData = AnimalList
-JSONData = []
+for Owner in PetOwners:
+    JSONOwner = vars(Owner)
+    JSONOwnerData.append(JSONOwner)
 
-for Things in AnimalList:
-    JSONAnimal = vars(Things)
-    JSONData.append(JSONAnimal)
+for Pets in AnimalList:
+    JSONAnimal = vars(Pets)
+    JSONAnimalData.append(JSONAnimal)
 
-JSONDataDict = ast.literal_eval(json.dumps(JSONData))
+JSONAnimals = ast.literal_eval(json.dumps(JSONAnimalData))
+JSONOwner = ast.literal_eval(json.dumps(JSONOwnerData))
 # print(JSONDataDict)
 
 
@@ -40,7 +36,8 @@ def home():
 # A route to return all of the available entries in our collection of pet owners.
 @app.route('/api/somearea/vetcustomers/all', methods=['GET'])
 def api_all():
-    return jsonify(JSONDataDict)
+    return jsonify(JSONAnimals)
+
 
 @app.route('/api/somearea/vetcustomers', methods=['GET'])
 def get_owner_by_id():
@@ -57,8 +54,11 @@ def get_owner_by_id():
 
     # Loop through the data and match results that fit the requested ID.
     # IDs are unique, but other fields might return many results
-    for Pet in JSONDataDict:
-        if Pet['id'] == id:
+    for Person in JSONOwner:
+        if Person['id'] == id:
+            results.append(Person)
+    for Pet in JSONAnimals:
+        if Pet['owner_id'] == id:
             results.append(Pet)
 
     # Use the jsonify function from Flask to convert our list of
@@ -67,4 +67,3 @@ def get_owner_by_id():
 
 
 app.run()
-

@@ -6,9 +6,8 @@ class VetAnimal(ABC):
     # Attributes
     Class_ID_Counter = 0
     IsAlive = True
-    WhyLastVisit = 'First check up'
     PetName = []
-    id = []
+    owner_id = []
 
     # Constructors
     def __init__(self, pet_name):
@@ -128,13 +127,14 @@ class Dog(Mammal):
     # diet = ['meat', 'dog food'] # Future Implementation
 
     # Constructors
-    def __init__(self, pet_name, age, breed, owner_id):
+    def __init__(self, pet_name, age, owner_id, breed):
         self.value = "dog"
         self.PetName = pet_name
         self.age = age
         self.breed = breed
-        self.id = owner_id
-        self.petid = VetAnimal.Class_ID_Counter
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
         VetAnimal.Class_ID_Counter += 1
 
 
@@ -154,13 +154,14 @@ class Cat(Mammal):
     # diet = ['meat', 'dog food'] # Future Implementation
 
     # Constructors
-    def __init__(self, pet_name, age, colour, owner_id):
+    def __init__(self, pet_name, age, owner_id, colour):
         self.value = "cat"
         self.PetName = pet_name
         self.age = age
         self.colour = colour
-        self.id = owner_id
-        self.petid = VetAnimal.Class_ID_Counter
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
         VetAnimal.Class_ID_Counter += 1
 
 
