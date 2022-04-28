@@ -1,7 +1,15 @@
 from VetAnimal import Dog, Cat
 from VetOwners import VetOwner
 
-# Creation of Owners
+# importing and assigning of data
+
+txt_file = open("CustomerData.txt", "r")
+readfile = txt_file.readlines()
+
+imported_animal_str = readfile[0].strip()
+imported_animal_dict = eval(imported_animal_str)
+
+txt_file.close()
 
 Alasdair = VetOwner('Alasdair')
 Ahmed = VetOwner('Ahmed')

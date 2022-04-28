@@ -1,6 +1,4 @@
 from abc import ABC, abstractmethod
-import itertools
-
 
 class VetAnimal(ABC):
     # Attributes
@@ -41,7 +39,8 @@ class Mammal(VetAnimal):
     # Attributes
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "Mammal"
 
     # Methods
@@ -61,7 +60,8 @@ class Bird(VetAnimal):
     wingspan = None
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "Bird"
 
     # Methods
@@ -83,7 +83,8 @@ class Antelope(Mammal):
     diet = ['grass']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "antelope"
 
     def __repr__(self):
@@ -106,7 +107,8 @@ class Fox(Mammal):
     diet = ['chicken', 'sheep']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "fox"
 
     def __repr__(self):
@@ -128,6 +130,7 @@ class Dog(Mammal):
 
     # Constructors
     def __init__(self, pet_name, age, owner_id, breed):
+        super().__init__(pet_name)
         self.value = "dog"
         self.PetName = pet_name
         self.age = age
@@ -146,8 +149,6 @@ class Dog(Mammal):
     def type(self):
         return self.value
 
-    def eats(self):
-        return self.diet
 
 class Cat(Mammal):
     # Attributes
@@ -155,6 +156,7 @@ class Cat(Mammal):
 
     # Constructors
     def __init__(self, pet_name, age, owner_id, colour):
+        super().__init__(pet_name)
         self.value = "cat"
         self.PetName = pet_name
         self.age = age
@@ -164,7 +166,6 @@ class Cat(Mammal):
         self.WhyLastVisit = 'First check up'
         VetAnimal.Class_ID_Counter += 1
 
-
     def __repr__(self):
         rep = 'cat'
         return rep
@@ -172,9 +173,6 @@ class Cat(Mammal):
     # Methods
     def type(self):
         return self.value
-
-    def eats(self):
-        return self.diet
 
 
 # giraffe
@@ -185,7 +183,8 @@ class Giraffe(Mammal):
     diet = ['leaves']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "giraffe"
 
     def __repr__(self):
@@ -208,7 +207,8 @@ class Bear(Mammal):
     diet = ['big_fish', 'bug', 'chicken', 'cow', 'leaves', 'sheep']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "bear"
 
     def __repr__(self):
@@ -231,7 +231,8 @@ class Cow(Mammal):
     diet = ['grass']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "cow"
 
     def __repr__(self):
@@ -254,7 +255,8 @@ class Lion(Mammal):
     diet = ['antelope', 'cow']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "lion"
 
     def __repr__(self):
@@ -276,7 +278,8 @@ class Panda(Mammal):
     diet = ['leaves']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "panda"
 
     def __repr__(self):
@@ -287,13 +290,6 @@ class Panda(Mammal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-
 
 # Sheep
 
@@ -302,7 +298,8 @@ class Sheep(Mammal):
     diet = ['grass']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "sheep"
 
     def __repr__(self):
@@ -312,13 +309,6 @@ class Sheep(Mammal):
     # Methods
     def type(self):
         return self.value
-
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
 
 
 # Birds ##########################
@@ -331,7 +321,8 @@ class Chicken(Bird):
     diet = ['bug']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "chicken"
 
     def __repr__(self):
@@ -341,13 +332,6 @@ class Chicken(Bird):
     # Methods
     def type(self):
         return self.value
-
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
 
 
 # Others ##########################
@@ -359,7 +343,8 @@ class Bug(VetAnimal):
     diet = ['leaves']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "Bug"
 
     def __repr__(self):
@@ -373,13 +358,6 @@ class Bug(VetAnimal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-
 
 # big-fish
 class Big_Fish(VetAnimal):
@@ -387,7 +365,8 @@ class Big_Fish(VetAnimal):
     diet = ['little_fish']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "big_fish"
 
     def __repr__(self):
@@ -401,13 +380,6 @@ class Big_Fish(VetAnimal):
     def reproduce(self):
         return "Lay Eggs"
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-
 
 # Little-fish
 class Little_Fish(VetAnimal):
@@ -415,7 +387,8 @@ class Little_Fish(VetAnimal):
     diet = ['']
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "little_fish"
 
     def __repr__(self):
@@ -429,13 +402,6 @@ class Little_Fish(VetAnimal):
     def reproduce(self):
         return "Lay Eggs"
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-
 
 # grass
 class Grass(VetAnimal):
@@ -443,7 +409,8 @@ class Grass(VetAnimal):
     diet = []
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "grass"
 
     def __repr__(self):
@@ -457,13 +424,6 @@ class Grass(VetAnimal):
     def type(self):
         return self.value
 
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
-
 
 # leaves
 class Leaves(VetAnimal):
@@ -471,7 +431,8 @@ class Leaves(VetAnimal):
     diet = []
 
     # Constructors
-    def __init__(self):
+    def __init__(self, pet_name):
+        super().__init__(pet_name)
         self.value = "leaves"
 
     def __repr__(self):
@@ -484,10 +445,3 @@ class Leaves(VetAnimal):
 
     def type(self):
         return self.value
-
-    def eats(self, Food):
-        if Food in self.diet:
-            self.Test = True
-            return
-        else:
-            self.Test = False
