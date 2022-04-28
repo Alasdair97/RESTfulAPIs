@@ -129,12 +129,12 @@ class Dog(Mammal):
     # diet = ['meat', 'dog food'] # Future Implementation
 
     # Constructors
-    def __init__(self, pet_name, age, owner_id, breed):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "dog"
         self.PetName = pet_name
         self.age = age
-        self.breed = breed
+        # self.breed = breed
         self.owner_id = owner_id
         self.pet_id = VetAnimal.Class_ID_Counter
         self.WhyLastVisit = 'First check up'
@@ -155,12 +155,12 @@ class Cat(Mammal):
     # diet = ['meat', 'dog food'] # Future Implementation
 
     # Constructors
-    def __init__(self, pet_name, age, owner_id, colour):
+    def __init__(self, pet_name, age, owner_id):
         super().__init__(pet_name)
         self.value = "cat"
         self.PetName = pet_name
         self.age = age
-        self.colour = colour
+        # self.colour = colour
         self.owner_id = owner_id
         self.pet_id = VetAnimal.Class_ID_Counter
         VetAnimal.Class_ID_Counter += 1
