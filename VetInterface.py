@@ -39,7 +39,13 @@ def home():
     "<p>Look up <a href='/api/somearea/data/all')>all data.</a></p>"
     "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
     "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
-    "<p>Look up owener and corispoding <a href='/api/somearea/vetcustomers?id=0')>pets.</a></p>"
+    "<p>Look up owener and corresponding pet(s): </p>"
+    """
+    <select onChange="window.location.href=this.value">
+         <option value="/api/somearea/vetcustomers?id=0">0</option>
+         <option value = "/api/somearea/vetcustomers?id=1">1</option>
+         <option value = "/api/somearea/vetcustomers?id=2">2</option>
+    </select>"""
     )
 
 
@@ -72,6 +78,7 @@ def get_owner_by_id():
 
     # Loop through the data and match results that fit the requested ID.
     # IDs are unique, but other fields might return many results
+    # Also matches all pets with same owner ID tag
     for Person in JSONOwner:
         if Person['id'] == id:
             results.append(Person)
