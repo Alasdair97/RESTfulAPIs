@@ -9,7 +9,7 @@ class VetAnimal(ABC):
 
     # Constructors
     def __init__(self, pet_name):
-        self.value = "Animal"
+        self.WhyLastVisit = "First check up"
 
     # Methods
     @abstractmethod
@@ -163,7 +163,6 @@ class Cat(Mammal):
         self.colour = colour
         self.owner_id = owner_id
         self.pet_id = VetAnimal.Class_ID_Counter
-        self.WhyLastVisit = 'First check up'
         VetAnimal.Class_ID_Counter += 1
 
     def __repr__(self):

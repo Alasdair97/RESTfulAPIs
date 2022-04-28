@@ -1,2 +1,2 @@
-{'value':'dog', 'PetName': 'Oscar', 'age': 7, 'owner_id': 0, 'breed': 'weimaraner'}
+{'value':'Dog', 'PetName': 'Oscar', 'age': 7, 'owner_id': 0, 'breed': 'weimaraner'}
 {'value':'dog', 'PetName': 'Mac', 'age': 3, 'owner_id': 1, 'breed': 'boxer'}

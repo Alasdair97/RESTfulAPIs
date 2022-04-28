@@ -9,6 +9,15 @@ readfile = txt_file.readlines()
 imported_animal_str = readfile[0].strip()
 imported_animal_dict = eval(imported_animal_str)
 
+print(imported_animal_dict)
+Oscar = eval(imported_animal_dict['value'])(imported_animal_dict['PetName'], imported_animal_dict['age'], imported_animal_dict['owner_id'], imported_animal_dict['breed'])
+
+# Type = imported_animal_dict['value']
+# method_to_call = getattr(Dog, 'PetName')
+# Test = imported_animal_dict['PetName']
+# Test2 = imported_animal_dict['owner_id']
+# TestAnimal = VetAnimal(Type)
+
 txt_file.close()
 
 Alasdair = VetOwner('Alasdair')
@@ -16,7 +25,7 @@ Ahmed = VetOwner('Ahmed')
 Gareth = VetOwner('Gareth')
 
 # Creation of pets
-Oscar = Dog('Oscar', 7, 0, 'weimaraner')
+# Oscar = Dog('Oscar', 7, 0, 'weimaraner')
 Leia = Cat('Leia', 18, 0, 'white')
 
 Mac = Dog('Mac', 3, 1, 'Boxer')
