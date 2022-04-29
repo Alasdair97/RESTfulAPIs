@@ -3,7 +3,6 @@ import flask
 from flask import request, jsonify, Flask
 from PetObjects import AnimalList, PetOwners
 import json
-import ast
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -22,9 +21,9 @@ for Pets in AnimalList:
     JSONAnimalData.append(JSONAnimal)
     JSONAllData.append(JSONAnimal)
 
-JSONAnimals = ast.literal_eval(json.dumps(JSONAnimalData))
-JSONOwner = ast.literal_eval(json.dumps(JSONOwnerData))
-JSONAll = ast.literal_eval(json.dumps(JSONAllData))
+JSONAnimals = json.loads(json.dumps(JSONAnimalData))
+JSONOwner = json.loads(json.dumps(JSONOwnerData))
+JSONAll = json.loads(json.dumps(JSONAllData))
 
 
 # print(JSONDataDict)
