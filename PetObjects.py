@@ -1,3 +1,4 @@
+import ast
 from VetAnimal import *
 from VetOwners import VetOwner
 
@@ -12,7 +13,7 @@ Owners = []
 
 for i in range(len(readfile)):
     imported_str = readfile[i].strip()
-    imported_dict = eval(imported_str)
+    imported_dict = ast.literal_eval(imported_str)
     # print(imported_dict)
     if 'Owner_Name' in imported_dict:
         # print('This a human')
