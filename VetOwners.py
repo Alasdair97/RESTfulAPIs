@@ -14,5 +14,3 @@ class VetOwner(ABC):
         self.id = VetOwner.Class_ID_Counter
         VetOwner.Class_ID_Counter += 1
 
-    # Methods
- #   @abstractmethod
