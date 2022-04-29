@@ -1,4 +1,4 @@
-from VetAnimal import Dog, Cat, Fox
+from VetAnimal import * # Dog, Cat, Fox
 from VetOwners import VetOwner
 
 # importing and assigning of data
