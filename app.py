@@ -1,5 +1,4 @@
 # Vet interface
-import flask
 from flask import request, jsonify, Flask
 from PetObjects import AnimalList, PetOwners
 import json
