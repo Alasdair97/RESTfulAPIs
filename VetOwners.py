@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class VetOwner(ABC):
@@ -13,4 +13,3 @@ class VetOwner(ABC):
         self.Owner_Name = owner_name
         self.id = VetOwner.Class_ID_Counter
         VetOwner.Class_ID_Counter += 1
-

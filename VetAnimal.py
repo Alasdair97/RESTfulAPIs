@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class VetAnimal(ABC):
     # Attributes
     Class_ID_Counter = 0
@@ -10,14 +11,15 @@ class VetAnimal(ABC):
     # Constructors
     def __init__(self, pet_name):
         self.WhyLastVisit = "First check up"
+        self.PetName = pet_name
 
     # Methods
     @abstractmethod
     def type(self):
         pass
 
-    def changePetName(self, petName):
-        self.PetName = petName
+    def change_pet_name(self, pet_name):
+        self.PetName = pet_name
         return
 
     def die(self):
@@ -151,7 +153,6 @@ class Dog(Mammal):
         self.pet_id = VetAnimal.Class_ID_Counter
         self.WhyLastVisit = 'First check up'
         VetAnimal.Class_ID_Counter += 1
-
 
     def __repr__(self):
         rep = 'dog'
