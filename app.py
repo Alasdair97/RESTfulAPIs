@@ -33,7 +33,7 @@ JSONAll = json.loads(json.dumps(JSONAllData))
 def home():
     return (
         "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
-        "<p> This is an update from git :) </p>"
+        "<p> :) This is an update from git :) </p>"
         "<p>Look up <a href='/api/somearea/data/all')>all data.</a></p>"
         "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
         "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
