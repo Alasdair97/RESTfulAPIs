@@ -32,7 +32,7 @@ JSONAll = json.loads(json.dumps(JSONAllData))
     'GET'])  # which HTTP method we are using (GET) what route (extra bit of the URL) this method will be activated on.
 def home():
     return (
-        "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
+        "<h1>Welcome to TSI Vets Updated</h1><p>Internal System</p>"  # what the api returns
         "<p>Look up <a href='/api/somearea/data/all')>all data.</a></p>"
         "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
         "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
