@@ -35,9 +35,9 @@ def home():
         "<h1>Welcome to TSI Vets</h1><p>Internal System</p>"  # what the api returns
         "<p> Example GET requests </p>"
         "<p>Look up <a href='/api/somearea/data/all')>all data.</a> will fetch from extension /api/somearea/data/all</p>"
-        "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a></p>"
-        "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a></p>"
-        "<p>Look up owener and corresponding pet(s): </p>"
+        "<p>Look up <a href='/api/somearea/vetpets/all')>all animals.</a> will fetch from extension /api/somearea/vetpets/all </p>"
+        "<p>Look up <a href='/api/somearea/vetcustomers/all')>all owners.</a> will fetch from extension /api/somearea/vetcustomers/all </p>"
+        "<p>Look up owners and corresponding pet(s): will fetch from extension /api/somearea/vetcustomers?id=[input] </p>"
         """
     <select onChange="window.location.href=this.value">
         <option value="/">-</option>
