@@ -21,7 +21,7 @@ for i in range(len(readfile)):
         Owners.append(Owner_i)
     elif 'PetName' in imported_dict:
         # print('This a pet')
-        Pet_i = eval(imported_dict['value'])(imported_dict['PetName'], imported_dict['age'], imported_dict['owner_id'])
+        Pet_i = eval(imported_dict['value'].strip())(imported_dict['PetName'], imported_dict['age'], imported_dict['owner_id'])
         if 'breed' in imported_dict:
             Pet_i.breed = imported_dict['breed']
         if 'colour' in imported_dict:
