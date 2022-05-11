@@ -4,8 +4,6 @@ from abc import ABC
 class VetOwner(ABC):
     # Attributes
     Class_ID_Counter = 0
-    id = []
-    Owner_Name = []
 
     # Constructors
     def __init__(self, owner_name):

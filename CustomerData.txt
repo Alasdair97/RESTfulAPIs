@@ -9,4 +9,4 @@
 {'value':'VetOwner', 'Owner_Name': 'Dorothy'}
 {'value':'Dog', 'PetName': 'Toto', 'age': 5, 'owner_id': 3, 'breed': 'Cairn Terrier', 'WhyLastVisit': 'Blown away in wind'}
 {'value':'Bear', 'PetName': 'Gary', 'age': 2, 'owner_id': 0, 'colour': 'Brown', 'WhyLastVisit': 'Poor eyesight'}
-{'value':'Parrot', 'PetName': 'Kieran', 'age': 23, 'owner_id': 1, 'colour': 'Yellow'}
+{'value':'Parrot', 'PetName': 'Kieran', 'age': 23, 'owner_id': 1, 'colour': 'Yellow', 'WingSpan': '0.5'}

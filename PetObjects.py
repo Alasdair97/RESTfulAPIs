@@ -28,6 +28,8 @@ for i in range(len(readfile)):
             Pet_i.colour = imported_dict['colour']
         if 'WhyLastVisit' in imported_dict:
             Pet_i.WhyLastVisit = imported_dict['WhyLastVisit']
+        if 'WingSpan' in imported_dict:
+            Pet_i.WingSpan = imported_dict['WingSpan']
 
         Pets.append(Pet_i)
     else:
