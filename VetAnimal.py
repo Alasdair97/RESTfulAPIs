@@ -387,6 +387,28 @@ class Chicken(Bird):
     def type(self):
         return self.value
 
+class Parrot(Bird):
+    # Attributes
+    diet = ['bug']
+
+    # Constructors
+    def __init__(self, pet_name, age, owner_id):
+        super().__init__(pet_name)
+        self.value = "parrot"
+        self.PetName = pet_name
+        self.age = age
+        self.owner_id = owner_id
+        self.pet_id = VetAnimal.Class_ID_Counter
+        self.WhyLastVisit = 'First check up'
+        VetAnimal.Class_ID_Counter += 1
+
+    def __repr__(self):
+        rep = 'parrot'
+        return rep
+
+    # Methods
+    def type(self):
+        return self.value
 
 # Others ##########################
 
